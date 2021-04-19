@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "name": "Booking",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "maxParticipants": {
+      "type": "integer",
+      "max": 6,
+      "required": true,
+      "min": 1
+    },
+    "booking_users": {
+      "via": "booking",
+      "collection": "booking-user"
+    }
+  }
+}

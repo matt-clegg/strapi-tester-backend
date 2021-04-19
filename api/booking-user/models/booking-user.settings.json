@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "booking_users",
+  "info": {
+    "name": "Booking User",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "private": true,
+      "unique": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "booking": {
+      "model": "booking",
+      "via": "booking_users"
+    }
+  }
+}
